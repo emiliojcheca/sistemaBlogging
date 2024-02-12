@@ -1,0 +1,20 @@
+<div class="form">
+    <div>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" [(ngModel)]="newPublicacion.titulo">
+    </div>
+    <div>
+        <label for="imagen">URL Imagen (p.e. https://placehold.co/300x200)</label>
+        <input type="text" id="imagen" [(ngModel)]="newPublicacion.imagen">
+    </div>
+    <div>
+        <label for="texto">Texto</label>
+        <textarea name="textarea" rows="10" cols="50" id="texto" [(ngModel)]="newPublicacion.texto">Escribe aquí el contenido del artículo</textarea>
+        <!--input class="textArea" type="text" -->
+    </div>
+    <div>
+        <label for="fecha">Fecha</label>
+        <input type="date" placeholder="dd/MM/yyyy"  id="fecha" [(ngModel)]="newPublicacion.fecha" (ngModelChange)="onDateChange($event)">
+    </div>
+    <button (click)="guardar()">Enviar</button>
+</div>

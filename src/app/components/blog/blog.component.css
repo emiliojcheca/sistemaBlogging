@@ -1,0 +1,59 @@
+article {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.par{
+    background-color: beige;
+}
+
+.impar {
+    background-color: blanchedalmond;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario, .blog {
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+.formulario {
+    order: 2;
+    width: 30%;
+}
+
+.blog {
+    order: 1;
+    width: 70%;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contenido img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    section {
+        flex-direction: row;
+    }
+
+    .contenido {
+        flex-direction: row;
+    }
+}

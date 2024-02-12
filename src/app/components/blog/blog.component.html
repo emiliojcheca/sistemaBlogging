@@ -1,0 +1,23 @@
+<section class="flex">
+
+    <aside class="formulario">
+        <!-- formulario -->
+        <app-form (publicacionEmitida)="insertData($event)"></app-form>
+    </aside>
+
+    <div class="blog">
+        @for(publicacion of blog; track publicacion.id; let par=$even; let impar=$odd;) {
+            <article [class.par]="par" [class.impar]="impar">
+                <h3>{{publicacion.titulo}}</h3>
+                <p>Fecha de publicación: {{publicacion.fecha | date: 'dd/MM/yyyy'}}</p>
+                <div class="contenido">
+                  <img [src]="publicacion.imagen" alt="">
+                  <p>{{publicacion.texto}}</p>
+                </div>
+            </article>
+        }@empty {
+            <p>No hay publicaciones en el blog</p>
+        }
+    </div>
+    
+</section>
